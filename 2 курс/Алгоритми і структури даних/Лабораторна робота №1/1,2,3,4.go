@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math/rand/v2"
+)
 
 // Структура даних "Стек"
 type Stack struct {
@@ -68,9 +71,55 @@ func (s *Stack) topElement() int {
 	return s.peek()
 }
 
-func main() {
-	// Визначення розміру стека за формулою S = 9 * 5 + 50
-	stackSize := 9*5 + 50
+// Заповнення стека випадковими числами від 1 до 1000
+func fillStackWithRandomNumbers(stack *Stack, n int) {
+	for i := 0; i < n; i++ {
+		num := rand.IntN(1000-1) + 1 // Генерування випадкового числа від 1 до 1000
+		stack.push(num)
+	}
+}
 
-	NewStack(stackSize)
+// Розподіл чисел на парні та непарні в окремі стеки
+func splitStackByParity(original *Stack) (*Stack, *Stack) {
+	evenStack := NewStack(original.sizeStack()) //
+	oddStack := NewStack(original.sizeStack())  //
+
+	for !original.isEmpty() {
+		value := original.pop()
+		if value%2 == 0 {
+			evenStack.push(value)
+		} else {
+			oddStack.push(value)
+		}
+	}
+
+	return evenStack, oddStack
+}
+
+// Виведення елементів стека
+func (s *Stack) print() {
+	for i := 0; i < s.sizeStack(); i++ {
+		fmt.Print(s.data[i], " ")
+	}
+
+	fmt.Println()
+}
+
+func main() {
+	// Завдання 1: Визначення розміру стека за формулою S = 9 * 5 + 50
+	stackSize := 9*5 + 50
+	stack := NewStack(stackSize)
+
+	// Завдання 2: Заповнення стека випадковими числами
+	fillStackWithRandomNumbers(stack, stackSize)
+
+	// Завдання 3: Розподіл чисел на парні та непарні в окремі стеки
+	evenStack, oddStack := splitStackByParity(stack)
+
+	// Завдання 4: Виведення елементів парного і непарного стеків
+	fmt.Println("Стек з парними числами: ")
+	evenStack.print()
+
+	fmt.Println("Стек з непарними числами: ")
+	oddStack.print()
 }
