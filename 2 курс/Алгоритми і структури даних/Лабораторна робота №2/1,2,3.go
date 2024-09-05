@@ -5,11 +5,13 @@ import (
 	"math/rand/v2"
 )
 
+// Структура даних "Черга"
 type Queue struct {
 	Elements []int
 	Size     int
 }
 
+// Створення нової черги за заданим розміром
 func NewQueue(size int) *Queue {
 	return &Queue{
 		Elements: []int{},
