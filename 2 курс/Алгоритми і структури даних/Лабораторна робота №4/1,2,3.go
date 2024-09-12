@@ -86,7 +86,7 @@ func deleteNode(node *Node, key int) *Node {
 	return node
 }
 
-// Функція для пошуку мінімального елемента в дереві
+// Допоміжна функція для пошуку мінімального елемента в дереві
 func findMin(node *Node) *Node {
 	current := node
 	for current.left != nil {
@@ -95,13 +95,13 @@ func findMin(node *Node) *Node {
 	return current
 }
 
-// Функція для виведення вузлів дерева (інфіксним обходом)
+// Функція для виведення вузлів дерева
 func (t *BinaryTree) InOrder() {
 	inOrderTraversal(t.root)
 	fmt.Println()
 }
 
-// Рекурсивна функція інфіксного обходу
+// Рекурсивна функція виведення вузлів
 func inOrderTraversal(node *Node) {
 	if node != nil {
 		inOrderTraversal(node.left)
