@@ -1,0 +1,27 @@
+[
+    {
+        "date": "01.01.2025",
+        "precipitation": 10,
+        "temperature": 2
+    },
+    {
+        "date": "02.01.2025",
+        "precipitation": 5,
+        "temperature": -3
+    },
+    {
+        "date": "04.01.2025",
+        "precipitation": 7,
+        "temperature": 0
+    },
+    {
+        "date": "05.01.2025",
+        "precipitation": 3,
+        "temperature": -5
+    },
+    {
+        "date": "03.02.2019",
+        "precipitation": 12.0,
+        "temperature": -8.0
+    }
+]
