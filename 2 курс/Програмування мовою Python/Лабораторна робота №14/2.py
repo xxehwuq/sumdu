@@ -64,4 +64,4 @@ input_country = input("Введіть назву країни (Ukraine або Un
 if (input_country in data) or input_country == "":
     show_plot(input_country)
 else:
-    print(f"Невірно введена назва країни")
+    print("Невірно введена назва країни")
