@@ -26,25 +26,14 @@ def create(filename):
 
 def remove_nums(input_filename, output_filename):
     try:
-        input_file = open(input_filename, 'r')
-        output_file = open(output_filename, 'w')
+        with open(input_filename, 'r') as input_file, open(output_filename, 'w') as output_file:
+            content = input_file.read()
 
-        content = input_file.read()
+            filtered_content = ''.join(char for char in content if not char.isdigit())
+            filtered_content = filtered_content.replace("\n", "").strip()
 
-        lines = content.split("\n")
-
-        for line in lines:
-            new_line = ''
-
-            for symbol in line:
-                if not symbol.isdigit():
-                    new_line += symbol
-
-                if len(new_line) == 10:
-                    new_line += "\n"
-
-            output_file.write(new_line + "\n")
-
+            for i in range(0, len(filtered_content), 10):
+                output_file.write(filtered_content[i:i + 10] + "\n")
         print(f"Файл {output_filename} оброблений і збережений")
 
     except Exception as e:

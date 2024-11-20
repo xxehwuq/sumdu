@@ -8,6 +8,7 @@
 import json
 import matplotlib.pyplot as plt
 
+
 def read_json_file(filename):
     try:
         with open(filename, "r", encoding="utf-8") as file:

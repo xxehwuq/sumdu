@@ -13,4 +13,5 @@ def remove_duplicates():
 
     print("Список без повторів:", unique_lst)
 
+
 remove_duplicates()

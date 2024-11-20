@@ -12,13 +12,14 @@ def squares_set():
 
     i = 1
     while i <= n:
-        if i**2 <= 1000:
-            squares.add(i**2)
-            i+=1
+        if i ** 2 <= 1000:
+            squares.add(i ** 2)
+            i += 1
         else:
             print(f"Число {i}^2 перевищує 1000")
             break
 
     print("Множина квадратів:", *sorted(squares))
+
 
 squares_set()

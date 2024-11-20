@@ -12,13 +12,16 @@ weather_data = {
     "05.11.2024": {"опади": 12, "температура": 4},
 }
 
+
 def print_one_record(data, date):
     values = data[date]
     print(f"Дата: {date}, кількість опадів: {values['опади']} mm, температура: {values['температура']}°C")
 
+
 def print_all_values(data):
     for date, _ in data.items():
         print_one_record(data, date)
+
 
 def add_record(data):
     try:
@@ -33,6 +36,7 @@ def add_record(data):
     except ValueError:
         print("Неправильне введення, введіть числові значення для опадів і температури")
 
+
 def delete_record(data):
     date = input("Вкажіть дату (наприклад 01.11.2024): ")
     if date in data:
@@ -40,9 +44,11 @@ def delete_record(data):
     else:
         print("Для цієї дати не знайдено записів")
 
+
 def view_sorted_by_keys(data):
     for date in sorted(data.keys()):
         print_one_record(data, date)
+
 
 def calculate_snow_and_rain(data):
     snow = sum(values["опади"] for values in data.values() if values["температура"] <= 0)
@@ -50,6 +56,7 @@ def calculate_snow_and_rain(data):
 
     print(f"Загальна кількість снігових опадів: {snow} mm")
     print(f"Загальна кількість дощових опадів: {rain} mm")
+
 
 def menu():
     while True:
@@ -78,5 +85,6 @@ def menu():
             break
         else:
             print("Неправильний вибір")
+
 
 menu()

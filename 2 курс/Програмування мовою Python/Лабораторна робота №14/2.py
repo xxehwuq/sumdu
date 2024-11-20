@@ -35,6 +35,7 @@ except Exception as e:
     print(f"Помилка під час читання CSV файлу: {e}")
     exit()
 
+
 def show_plot(country):
     plot.figure(figsize=(12, 5))
     plot.xlabel("Рік")
@@ -60,7 +61,9 @@ def show_plot(country):
         plot.grid(alpha=0.5)
         plot.show()
 
-input_country = input("Введіть назву країни (Ukraine або United States) або залиште поле пустим для відображення даних двох країн: ")
+
+input_country = input(
+    "Введіть назву країни (Ukraine або United States) або залиште поле пустим для відображення даних двох країн: ")
 if (input_country in data) or input_country == "":
     show_plot(input_country)
 else:

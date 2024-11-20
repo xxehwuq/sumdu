@@ -1,4 +1,4 @@
- # Завдання 1. Варіант 7
+# Завдання 1. Варіант 7
 
 # Знайти дані Exports of goods and services (% of GDP) для уcіх країн світу за 2019 рік. Вивести вміст .csv файлу на
 # екран. Організувати пошук найнижчого та найвищого значень показника та записати результат пошуку у новий .csv файл.
@@ -28,7 +28,6 @@ try:
 
     reader = csv.DictReader(csvfile1, delimiter=",")
     writer = csv.DictWriter(csvfile2, delimiter=",", fieldnames=["Критерій", "Країна", "2019"])
-
 
     max_value_country, min_value_country = "", ""
     max_value, min_value = 0.0, 0.0

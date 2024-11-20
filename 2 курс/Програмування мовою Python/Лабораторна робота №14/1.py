@@ -9,7 +9,7 @@ import numpy as np
 import matplotlib.pyplot as plot
 
 x = np.linspace(0.01, 4, 100)
-y = np.sin(10 * x) * np.sin(3 * x) / (x**2)
+y = np.sin(10 * x) * np.sin(3 * x) / (x ** 2)
 
 plot.figure(figsize=(8, 8))
 plot.plot(x, y, linestyle='solid', color='blue', linewidth=2, label="Y(x)=sin(10*x)*sin(3*x)/(x^2), x=[0...4]")
