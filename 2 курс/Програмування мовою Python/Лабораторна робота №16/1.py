@@ -24,6 +24,7 @@ except FileNotFoundError:
     print("Файл не знайдено!")
     exit(0)
 
+
 def count_words(text):
     sentences = nltk.sent_tokenize(text)
     k_words = 0
@@ -34,9 +35,11 @@ def count_words(text):
 
     return k_words
 
+
 def remove_stopwords(text):
     stop_words = set(stopwords.words('english'))
-    cleaned_text_arr = [word.lower() for word in text if word.lower() not in stop_words and word not in string.punctuation]
+    cleaned_text_arr = [word.lower() for word in text if
+                        word.lower() not in stop_words and word not in string.punctuation]
     return ''.join(str(letter) for letter in cleaned_text_arr)
 
 
